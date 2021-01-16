@@ -22,8 +22,7 @@ conj(const complex& x);
 class complex
 {
 public:
-    complex(double r = 0, double i = 0)
-        : re(r), im(i)  // 初始化
+    complex(double r = 0, double i = 0) : re(r), im(i)  // 初始化
     { }  // 括号里叫assign ments
 
     complex& operator += (const complex&);
