@@ -46,7 +46,7 @@ class Observer
 {
     Observer() {}
     ~Observer() {}
-    virtual void update(Subject* sub, const int m_value) const = 0;
+    virtual void update(Subject* sub, const int m_value) = 0;
 };
 
 int main(int argc, char const* argv[])
