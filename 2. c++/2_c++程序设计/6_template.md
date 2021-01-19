@@ -87,7 +87,7 @@ int main(int argc, char const *argv[])
 }
 ```
 
-`pair<Base1, Base2>(pair<Derived1, Derived2>());` 我能不能用<鲫鱼, 麻雀> 赋值给 <鱼类，鸟类>, 显示是可以的，相反则不行。
+`pair<Base1, Base2>(pair<Derived1, Derived2>());` 我能不能用<鲫鱼, 麻雀> 赋值给 <鱼类，鸟类>, 显然是可以的，相反则不行。
 
 ```cpp
 template<typename U1, typename U2>
@@ -96,4 +96,4 @@ pair(const pair<U1, U2>& p) : first(p.first), second(p.second) {}
 
 这种在模板类里面的模板，叫成员模板。 
 
-标准库中大量的类的构造函数有应用，使得构造函数更有弹性。
+标准库中大量的类构造函数有应用，使得构造函数更有弹性。
