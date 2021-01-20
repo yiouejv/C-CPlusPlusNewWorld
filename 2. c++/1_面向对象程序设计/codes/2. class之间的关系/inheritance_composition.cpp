@@ -31,6 +31,6 @@ private:
 
 int main(int argc, char const* argv[])
 {
-    C c; // A B C C A B
+    C c; // A B C C B A
     return 0;
 }
