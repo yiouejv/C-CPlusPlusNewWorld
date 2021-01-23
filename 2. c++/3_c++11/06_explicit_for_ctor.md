@@ -3,7 +3,7 @@
 
 C++2.0 之前 `explicit` 用在一个实参的 ctor上。
 
-参考: <a href="2_c++程序设计/02_non_explicit_one_argument_ctor.md">2_c++程序设计/02_non_explicit_one_argument_ctor.md</a>
+参考: <a href="../2_c++程序设计/02_non_explicit_one_argument_ctor.md">2_c++程序设计/02_non_explicit_one_argument_ctor.md</a>
 
 ----------------------------------------
 
