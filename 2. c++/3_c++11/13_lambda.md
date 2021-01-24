@@ -1,6 +1,6 @@
 
 
-**[...](...)mutable throwSpec -> retType { ... }**
+<strong>\[...\]\(...\)mutable throwSpec \-\> retType \{ ... \}</strong>
 
 []  可以取用外部的变量
 
