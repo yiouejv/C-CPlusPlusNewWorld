@@ -50,6 +50,8 @@ int main(int argc, char const* argv[])
 }
 ```
 
+特化之前要写出泛化的版本.
+
 **偏特化**
 
 *情景一*

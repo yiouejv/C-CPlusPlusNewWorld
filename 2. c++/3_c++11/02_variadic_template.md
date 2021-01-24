@@ -81,28 +81,28 @@ inline void hash_combine(size_t& seed, const T& val)
 #include<string>
 using namespace std;
 
+namespace test {
+    template<typename... Values> class tuple;
+    template<> class tuple<> {};
 
-template<typename... Values> class tuple;
-template<> class tuple<> {};
+    template<typename Head, typename... Tail>
+    class tuple<Head, Tail...> : private tuple<Tail...>
+    {
+        typedef tuple<Tail...> inherited;
+    protected:
+        Head m_head;
+    public:
+        tuple() {}
+        tuple(Head v, Tail... vtail) : m_head(v), inherited(vtail...) {}
 
-template<typename Head, typename... Tail>
-class tuple<Head, Tail...> : private tuple<Tail...>
+        auto head()->decltype(m_head) { return m_head; }
+        inherited& tail() { return *this; }
+    };
+}
+
+int main(int argc, char const* argv[])
 {
-    typedef tuple<Tail...> inherited;
-public:
-    tuple() {}
-    tuple(Head v, Tail... vtail) : m_head(v), inherited(vtail...) {}
-
-    typename Head::type head() { return m_head; }
-    inherited& tail() { return *this; }
-protected:
-    Head m_head;
-};
-
-
-int main(int argc, char const *argv[])
-{
-    tuple<int, float, string> t(41, 6.3, "nico");
+    test::tuple<int, float, string> t(41, 6.3, "nico");
     return 0;
 }
 ```
