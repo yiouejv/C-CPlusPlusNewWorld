@@ -2,6 +2,8 @@
 
 decltype
 
+`declare type`
+
 
 defines a type equivalent to the type of an expression
 
