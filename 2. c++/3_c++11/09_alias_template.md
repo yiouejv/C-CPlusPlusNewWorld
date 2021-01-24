@@ -12,7 +12,7 @@ using Vec = std::vector<T, MyAlloc<T>>;  // standard vector using own allocator
 ```cpp
 Vec<int> coll;
 
-// is equivalent to
+// is equivalent to 
 
 std::vector<int>(int, MyAlloc<int>) coll;
 ```
@@ -38,7 +38,7 @@ template<int> std::vector<int, MyAlloc<int>> coll;  // 这不是我想要的
 
 ---------------------------------------------------------------------------
 
-
+ 
 
 
 
