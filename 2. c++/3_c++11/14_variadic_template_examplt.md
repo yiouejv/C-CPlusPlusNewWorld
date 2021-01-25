@@ -97,3 +97,94 @@ int main(int argc, char const* argv[])
 }
 ```
 
+### 例4
+
+递归继承
+
+```cpp
+namespace test
+{
+    template<typename... Values> class tuple{};
+
+    template<typename Head, typename... Tail>
+    class tuple<Head, Tail...> : private tuple<Tail...>
+    {
+        typedef tuple<Tail...> Inherited;
+    public:
+        tuple() {}
+        tuple(const Head& h, const Tail&... t) : m_head(h), Inherited(t...) {}
+        Head& head() { return m_head; }
+        Inherited& tail() { return *this; }
+    protected:
+        Head m_head;
+    };
+}
+
+
+test::tuple<int, float, char, string> t(1, 2.0, '3', "4");
+cout << t.head() << endl;
+cout << t.tail().head() << endl;
+```
+
+### 例5
+
+递归复合
+
+```cpp
+template<typename... Values> class Com {};
+
+template<typename Head, typename... Tail>
+class Com<Head, Tail...>
+{
+    typedef Com<Tail...> Composited;
+public:
+    Com() {}
+    Com(const Head& h, const Tail&... tails) : m_head(h), m_tail(tails...) {}
+    Head& head() { return m_head; }
+    Composited& tail() { return m_tail; }
+private:
+    Head m_head;
+    Composited m_tail;
+};
+
+test::Com<int, float, string> t(1, 2, "3");
+cout << t.head() << endl;
+cout << t.tail().head() << endl;
+cout << t.tail().tail().head() << endl;
+```
+
+### 例6
+
+递归委托
+
+```cpp
+template<typename... Values> class Delegation {};
+
+template<typename Head, typename... Tail>
+class Delegation<Head, Tail...>
+{
+    typedef Delegation<Tail...> Dele;
+public:
+    Delegation() {}
+    Delegation(const Head& h, const Tail&... tails) : m_head(h), m_tail(new Dele(tails...)) { }
+    Delegation(const Delegation& rhs) { m_head = rhs.m_head; /* 具体拷贝指针内容的部分*/ }
+    Delegation& operator=(const Delegation& rhs) {
+        // 自我赋值
+        // 删除自身
+        // 拷贝
+        return *this;
+    }
+    Head& head() { return m_head; }
+    Dele& tail() { return *m_tail; }
+    ~Delegation() { delete m_tail; }
+private:
+    Head m_head;
+    Dele* m_tail;
+};
+
+
+test::Delegation<int, float, string> t(1, 2, "3");
+cout << t.head() << endl;
+cout << t.tail().head() << endl;
+cout << t.tail().tail().head() << endl;
+```
