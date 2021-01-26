@@ -4,7 +4,7 @@
 
 When the right-hand side of an assignment is an rvalue, then the left-hand side object can steal resources from the right-hand side object rather than performing a separate allocation, thus enabling move semantics
 
-Lvalue: 可以出现于 operator= 左侧者
+Lvalue: 可以出现于 operator= 左侧者   
 Rvalue: 只能出现于 operator= 右侧者
 
 ```cpp
@@ -35,7 +35,7 @@ complex<int>() = complex<int>(4, 9);   // 竟然可以对temp object 赋值
 
 临时对象就是一种右值，右值不可以放在左边。
 
-上述`string` `complex` 可以是c++自己没有遵循这个原则。
+上述`string` `complex` 可以, 是c++自己没有遵循这个原则。
 
 ------------------------------------------------------
 ```cpp
@@ -82,7 +82,7 @@ a.test(string("world"));
 
 <img src="../images/deep_copy.png">
 
-`move`原理的新的指针指向原来的内存块，把老指针的指向给断了。
+`move`原理是新的指针指向原来的内存块，把老指针的指向给断了。
 
 <img src="../images/move_copy.png">
 
