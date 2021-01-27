@@ -61,7 +61,7 @@ ln -s 文件名  快捷方式名
 
 ln 文件名 文件名
 
-<img src="../images/file_link.png">
+<img src="./images/file_link.png">
 
 
 硬链接的使用场景:
@@ -77,12 +77,13 @@ ln 文件名 文件名
 chmod who[+-=] mode 文件名
 
 who:
+```
     - u: user 文件所有者
     - g: group 文件所属组
     - o: other 其他人
     - a: all 所有人
-
-+-=:  增加，减去，覆盖权限
+```
++-=:  增加，减去，覆盖权限   
 mode: rwx, 读写执行
 
 
@@ -100,7 +101,7 @@ r: 4, w: 2, x: 1, -: 0
 
 修改文件所有者和所属组
 
-chown 新的所有者 文件名
+chown 新的所有者 文件名   
 chown 新的所有者:新的组 文件名
 
 
@@ -128,7 +129,7 @@ chown 新的所有者:新的组 文件名
 
 - 根据深度做搜索:
 
-    `-maxdepth n` 指定一个最深的层数
+    `-maxdepth n` 指定一个最深的层数   
     `-mindepth n` 搜索n层以上的目录
 
 
@@ -161,7 +162,7 @@ grep -r(有子目录) "查找的内容" 搜索的路径
 
 ### 压缩包管理
 
-.gz      --gzip
+.gz      --gzip   
 .bz2     --bzip2
 
 tar: 打包
