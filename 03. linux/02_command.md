@@ -188,6 +188,25 @@ zip:
 解压: unzip 压缩包的名字 -d 解压目录   
 
 
+### apt
+
+ubuntu apt-get
+
+1. 在线安装
+
+    - 安装： sudo apt-get install 安装包的名字
+    - 卸载: sudo apt-get remove 软件的名字
+    - 软件列表的更新: sudo apt-get update
+    - 清空缓存: sudo apt-get clean
+        
+        var/cache/apt/archives
+
+2. 软件包安装 (ubuntu 下 .deb格式)
+
+    - 安装: sudo dpkg -i 包名
+    - 卸载: sudo dpkg -r 软件的名字
+
+
 
 
     
