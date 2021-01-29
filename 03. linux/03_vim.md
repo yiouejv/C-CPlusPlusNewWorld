@@ -8,7 +8,7 @@ vim 移动:
 - gg=G: 代码自动对齐
 - gg: 定位行首
 - G: 定位行尾
-- 行号+G: 定位某一行a
+- 行号+G: 定位某一行
 - Ctrl + S: 锁住屏幕
 - Ctrl + Q: 解锁屏幕
 
@@ -123,11 +123,17 @@ vim 分屏
 
 我现在所用的vim配置
 
+需要把`plug.vim` 放在 `/home/yiouejv/.vim/autoload`下, 安装插件 PlugInstall
+
 ```sh
 "设置背景色，每种配色有两种方案，一个light、一个dark
+set t_Co=256
+colorscheme monokai
+let g:molokai_original=1
 set background=dark
+
 "打开语法高亮
-syntax on
+syntax enable
 set nu  
 "没有保存或文件只读时弹出确认
 "set confirm
@@ -152,18 +158,8 @@ set ruler
 "不要闪烁
 set novisualbell
 
-"启动显示状态行
-"set laststatus=2
-
-"浅色显示当前行
-"autocmd InsertLeave * se nocul
-
-"用浅色高亮当前行
-"autocmd InsertEnter * se cul
-
 "显示输入的命令
 set showcmd
-colorscheme elflord
 "设置字体和大小
 set guifont=Consolas:h12
 set guifontwide=Microsoft\ YaHei:h12
@@ -201,6 +197,26 @@ endfunc
 "激活折叠功能"
 set foldenable
 set fdm=syntax
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+    Plug 'yiouejv/vim-startify'
+    " 划出当前所有相同的单词
+    Plug 'yiouejv/vim-cursorword'
+    " 显示vim状态栏
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    " python 缩进线
+    Plug 'yggdroot/indentLine'
+    "配色
+    Plug 'tomasr/molokai' 
+    " 搜索
+    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+    Plug 'preservim/nerdtree'
+
+call plug#end()
 ```
 
 代码折叠功能:
@@ -213,6 +229,8 @@ set fdm=syntax
 - zm: 折叠最里层的代码
 
 
+模糊搜索文件:
 
-
+- Leaderf file
+- Ctrl + j / k: 在结果中选择
 
