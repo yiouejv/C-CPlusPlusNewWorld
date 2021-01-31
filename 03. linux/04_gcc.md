@@ -100,10 +100,8 @@ gcc 工作流程
 
             - 找到配置文件：/etc/ld.so.conf
             - 把动态库的绝对路径添加到文件中
-            - 执行一个命令: sudo idcondif -v
+            - 执行一个命令: sudo idconfig
 
         - 知识点扩展:
 
             - dlopen, dlclose, dlsym
-
-
