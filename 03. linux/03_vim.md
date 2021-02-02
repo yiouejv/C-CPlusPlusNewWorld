@@ -175,7 +175,7 @@ set termencoding=utf-8
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 "新建.py,.cc,.sh,.java文件，自动插入文件头"
-autocmd BufNewFile *.cpp,*.c,*.sh exec ":call SetTitle()"
+autocmd BufNewFile *.cpp,*.c,*.sh,*.py exec ":call SetTitle()"
     "定义函数SetTitle，自动插入文件头"
 func SetTitle()
     if expand ("%:e") == 'sh'
@@ -184,7 +184,13 @@ func SetTitle()
     call setline(3, "#Email: yiouejv@126.com")
     call setline(4, "#Time: ".strftime("%F %T"))
     call setline(5, "#Name: ".expand("%"))
-    else
+    elseif expand ("%:e") == 'py'
+    call setline(1, '#!/bin/python3.8')
+    call setline(2, "#Author: yiouejv")
+    call setline(3, "#Email: yiouejv@126.com")
+    call setline(4, "#Time: ".strftime("%F %T"))
+    call setline(5, "#Name: ".expand("%"))
+    elseif expand ("%:e") == "cpp"
     call setline(1, "/*")
     call setline(2, " *Author: yiouejv")
     call setline(3, " *Email: yiouejv@126.com")
@@ -217,6 +223,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
 
 call plug#end()
+
+
 ```
 
 代码折叠功能:
