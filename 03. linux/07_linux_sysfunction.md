@@ -27,7 +27,7 @@ K 查看函数文档
             
             - 创建文件时检测文件是否存在 O_EXCL
             - 如果文件存在，返回-1
-            - 必须与O_CREATE 一起使用
+            - 必须与O_CREAT 一起使用
 
         - 追加文件：O_APPEDN
         - 文件截断: O_TRUNC (相当于文件清空)
@@ -62,7 +62,7 @@ int close(int fd)
     - 返回值:
 
         - -1: 失败
-        - >0: 读出的字节数
+        - \>0: 读出的字节数
         - =0: 文件读完了
 
 ### write
@@ -78,11 +78,11 @@ int close(int fd)
     - 返回值:
 
         - -1: 失败
-        - >0: 写入到文件的字节数
+        - \>0: 写入到文件的字节数
 
 ### 练习
 
-有一个很大的文件，open，读出数据，写到另外一个文件中, 参考: code/copy.cpp
+有一个很大的文件，open，读出数据，写到另外一个文件中, 参考: <a href="code/copy.cpp">code/copy.cpp</a>
 
 
 ### perror
@@ -182,7 +182,9 @@ man 查看详情
 - pathname: 创建的目录名
 - mode: 目录权限，` mode & ~umask`
 
-### 删除一个空目录
+### rmdir
+
+删除一个空目录
 
 `int rmdir(const char* pathname);`
 
