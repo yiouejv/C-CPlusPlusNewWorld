@@ -64,3 +64,93 @@ int arr[2]{1, 2};
 int* p[2] = {&a, &b};
 int(*q)[2] = &arr;
 ```
+
+
+### 以下代码的输出结果是什么？
+
+```cpp
+int main(int argc, const char* argv[])
+{
+    int x = 2, y, z;
+    x *= (y=z=5); cout << x << endl;
+    z = 3;
+    x == (y=z); cout << x << endl;
+    x = (y == z); cout << x << endl;
+    x = (y & z); cout << x << endl;
+    y = 4;
+    x = (y | z); cout << x << endl;
+    x = (y || z); cout << x << endl;
+    return 0;
+}
+```
+
+```cpp
+int main(int argc, const char* argv[])
+{
+    int x = 2, y, z;
+    x *= (y=z=5); cout << x << endl;  // x = x * y;  x = 2 * 5;  10
+    z = 3;
+    x == (y=z); cout << x << endl;  // x == y; x 没变， x = 10;
+    x = (y == z); cout << x << endl;  // y == z; 为真，x = 1;
+    x = (y & z); cout << x << endl;  // x = (3 按位与 3); x = 3;
+    x = (y && z); cout << x << endl;  // x = (3 与 3); x = 1;
+    y = 4;
+    x = (y | z); cout << x << endl;  // x = (4 按位或 3); x = 7;
+    x = (y || z); cout << x << endl;  // x = (4 或 3); x = 1;
+    return 0;
+}
+```
+
+### 以下代码的输出结果是什么？
+
+```cpp
+int func(int x)
+{
+    int count = 0;
+    while (x) {
+        ++count;
+        x = x & (x - 1);
+    }
+    return count;
+}
+
+
+int main(int argc, const char* argv[])
+{
+    cout << func(9999) << endl;
+    return 0;
+}
+
+```
+
+
+### 以下代码的输出结果是什么？
+
+```cpp
+#include<cstdio>
+
+int main(int argc, const char* argv[])
+{
+    int b = 3;
+    int arr[] = {6,7,8,9,10};
+    int* ptr = arr;
+    *(ptr++) += 123;
+    printf("%d %d\n", *ptr, *(++ptr));
+    return 0;
+}
+```
+
+
+```cpp
+#include<cstdio>
+
+int main(int argc, const char* argv[])
+{
+    int b = 3;
+    int arr[] = {6,7,8,9,10};
+    int* ptr = arr;  // ptr 指向6的地址
+    *(ptr++) += 123;  // 等价于 *ptr += 123; ptr++; arr的值为 {129，7，8，9，10}，ptr指向7
+    printf("%d %d\n", *ptr, *(++ptr));  // printf从右往左压栈，++ptr, ptr 指向8的位置，输出 8 8
+    return 0;
+}
+```
