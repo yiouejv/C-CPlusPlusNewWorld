@@ -154,3 +154,24 @@ int main(int argc, const char* argv[])
     return 0;
 }
 ```
+
+### 以下代码的输出结果是什么？
+
+```cpp
+#include<cstdio>
+
+
+int main(int argc, const char* argv[])
+{
+    unsigned int a = 0xFFFFFFF7;
+    unsigned char i = (unsigned char) a;
+    char* p = (char*)&a;
+    printf("%08x %08x", i, *p);
+    return 0;
+}
+```
+
+在x86系列的cpu中，使用的是小端模式，低地址放数据的地位，F7放在第一个字节的位置，所以`unsigned int a = 0x000000F7`, p 指向 a的地址，由于 p是有符号char类型，所以`*p`的值为0xFFFFFFF7,
+内存里存放的是数据的补码。 所以输出： 000000F7, fffffff7
+
+
