@@ -72,7 +72,7 @@ int main(int argc, char const *argv[])
 
 最后附上内存结构图:
 
-<img src="../images/oob2_1.png">
+<img src="./images/oob2_1.png">
 
 **例2: 为什么虚函数效率低？**
 
@@ -92,13 +92,13 @@ C++支持多重继承，从而大大增强了面向对象程序设计的能力�
 
 虚拟继承是多重继承中特有的概念。 虚拟基类是为解决多重继承而出现的。 请看下图：
 
-<img src="../images/oob2_2.png">
+<img src="./images/oob2_2.png">
 
 类D继承自类B和类C, 而类B和类C都继承自类A.
 
 在类D中会两次出现A。为了节省内存空间，可以将B、C对A 的继承定义为虚拟继承，而A就成了虚拟基类。 最后形成如下图所示的情况：
 
-<img src="../images/oob2_3.png">
+<img src="./images/oob2_3.png">
 
 ```cpp
 代码如下：
@@ -196,7 +196,7 @@ int main(int argc, char const* argv[])
 
 内存结构图如下:
 
-<img src="../images/oob2_4.png">
+<img src="./images/oob2_4.png">
 
 
 **例6: 如果鸟是可以飞的，那么驼鸟是鸟么？驼鸟如何继承鸟类？**
