@@ -133,7 +133,7 @@ self operator--(int) {
 }
 
 self& operator+=(difference_type n) {
-    difference+type offset = n + (cur - first);
+    difference_type offset = n + (cur - first);
     if (offset >= 0 && offset < difference_type(buffer_size()))
         // 目标位置在同一个缓冲区
         cur += n;
