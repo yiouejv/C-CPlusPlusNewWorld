@@ -39,3 +39,16 @@ doSomething(B(28));  // 没问题，使用B构造函数将int显示转换
 
 被声明为 explicit的构造函数通常比其non-explici兄弟更受欢迎，因为它们禁止编译器执行非预期（往往也不被期望）的类型转换。除非我有一个好理由允许构造函数被用于隐式类型转换，否则我会把它声明为 explicit。
 
+
+**公众号:** *cpp_yang*
+
+**个人微信:** *yangxg_cxy*
+
+**今日头条:** *程序员杨小哥*
+
+**B站:** *https://space.bilibili.com/473029051*
+
+**知乎:** *https://www.zhihu.com/people/cpp_yang*
+
+  
+  

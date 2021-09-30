@@ -38,3 +38,18 @@ inline void CallWithMax(const T &a, const T &b) {
 这里不需要在函数本体中为参数加上括号，也不需要操心参数被核算（求值）多次……等等。此外由于callWithMax是个真正的函数，它遵守作用域（scope）和访问规则。
 
 例如你绝对可以写出一个“class内的private inline函数”。一般而言宏无法完成此事。
+
+
+
+**公众号:** *cpp_yang*
+
+**个人微信:** *yangxg_cxy*
+
+**今日头条:** *程序员杨小哥*
+
+**B站:** *https://space.bilibili.com/473029051*
+
+**知乎:** *https://www.zhihu.com/people/cpp_yang*
+
+  
+  

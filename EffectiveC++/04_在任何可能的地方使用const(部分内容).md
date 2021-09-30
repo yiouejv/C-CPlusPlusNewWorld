@@ -149,3 +149,16 @@ private:
 
 反向调用（也就是我们先前使用的那个）才是安全的：non-const成员函数本来就可以对其对象做任何动作，所以在其中调用一个 const 成员函数并不会带来风险。这就是为什么本例以static_cast作用于`*this`的原因：这里并不存在const相关危险。
 
+
+**公众号:** *cpp_yang*
+
+**个人微信:** *yangxg_cxy*
+
+**今日头条:** *程序员杨小哥*
+
+**B站:** *https://space.bilibili.com/473029051*
+
+**知乎:** *https://www.zhihu.com/people/cpp_yang*
+
+  
+  

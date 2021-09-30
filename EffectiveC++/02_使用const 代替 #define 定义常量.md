@@ -49,3 +49,17 @@ private:
     static const int numTurns = 5;
 };
 ```
+
+
+**公众号:** *cpp_yang*
+
+**个人微信:** *yangxg_cxy*
+
+**今日头条:** *程序员杨小哥*
+
+**B站:** *https://space.bilibili.com/473029051*
+
+**知乎:** *https://www.zhihu.com/people/cpp_yang*
+
+  
+  
