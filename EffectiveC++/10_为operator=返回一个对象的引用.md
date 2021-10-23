@@ -52,7 +52,7 @@ a3 = (a2 = a1)
 
 赋值操作符必须返回一个reference指向操作符的左侧实参
 
-<img src="../images/09_01.png">
+<img src="./images/09_01.png">
 
 除了 operator= 以外
 
