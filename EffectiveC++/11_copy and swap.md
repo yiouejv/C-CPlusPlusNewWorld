@@ -1,5 +1,5 @@
 
-定于operator= 时
+定义 operator= 时
 
 需要考虑一个问题
 
@@ -11,7 +11,7 @@
 
 我们定义了一个 String 类
 
-委托 `char *m_data` 来保存我们是数据
+委托 `char *m_data` 来保存我们的数据
 
 其定义像这样
 
