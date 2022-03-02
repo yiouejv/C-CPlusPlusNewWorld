@@ -29,7 +29,7 @@ public:
 
 - cur: 当前这段空间所指的位置
 - first：当前这段空间的开头位置
-- last: 当前这段空间的最后一个位置
+- finish: 当前这段空间的最后一个位置
 - node: `map_pointer`, map 指向内存的某一个地址
 
 ```cpp
