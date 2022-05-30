@@ -7,7 +7,7 @@ $(target): $(header) $(obj)
 	g++ $^ -o $@ -std=c++11
 
 %o:%c
-	g++ $< -c
+	g++ $< -c -std=c++11
 
 test:
 	echo $(obj)

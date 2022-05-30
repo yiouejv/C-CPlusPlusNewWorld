@@ -94,3 +94,4 @@ int main(int argc, char const* argv[])
 如果 `A(initializer_list<int> initList)` 版本不存在，编译器会把 `initializer_list` 拆成单个的参数传递给构造函数.
 
 ---------------------------------------------------------
+

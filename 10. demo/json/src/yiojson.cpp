@@ -21,7 +21,7 @@ static int parse_value(yio_context* c, yio_value* v);
 int parse(yio_value* v, const char* json)
 {
     yio_context c;
-    assert(v != nullptr);
+    assert(v != NULL);
     c.json = json;
     v->type = YIO_NULL;
     parse_whitespace(&c);
